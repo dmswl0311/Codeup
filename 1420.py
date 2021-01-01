@@ -1,15 +1,12 @@
-# 모르겠음..
+import sys
 
-n = int(input())
+n = int(sys.stdin.readline())
 dic = dict()
+
 for i in range(n):
-    name, score = map(str, input().split())
-    dic[name] = int(score)
+    name, score = map(str, sys.stdin.readline().split())
+    dic[int(score)] = name
 
-print(dic)
+dic2 = sorted(dic.keys(), reverse=True)
 
-third = sorted(dic.values())[2]
-print(third)
-for key, value in dic.items():
-    if (value == third):
-        print(key)
+print(dic.get(dic2[2]))
