@@ -15,4 +15,5 @@ for i in range(len(s)-1):
     else:
         continue
 
+
 print('%d' % result)
