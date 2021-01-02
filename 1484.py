@@ -1,21 +1,26 @@
 n, m = map(int, input().split())
 array = [[0]*m for _ in range(n)]
+result_n = n
+result_m = m
 row = 0
 col = -1
-trans = 1  # 행열의 증가, 감소
-cnt = 1
-limit = 0
+flag = 1
+num = 1
 
-for count in range(1, n*m):
-    for i in range(m-limit):
-        col += trans
-        array[row][col] = cnt
-        cnt += 1
-    for i in range(n-limit-1):
-        row += trans
-        array[row][col] = cnt
-        cnt += 1
-    limit += 1
-    trans *= -1
+while(n != 0 and m != 0):
+    for _ in range(m):
+        col += flag
+        array[row][col] = num
+        num += 1
+    n = n-1
+    for _ in range(n):
+        row += flag
+        array[row][col] = num
+        num += 1
+    m = m-1
+    flag *= -1
 
-print(array)
+for i in range(result_n):
+    for j in range(result_m):
+        print(array[i][j], end=' ')
+    print(' ')
