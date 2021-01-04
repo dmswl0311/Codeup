@@ -3,7 +3,7 @@ array = [[0]*m for _ in range(n)]
 result_n = n
 result_m = m
 row = -1
-col = n
+col = m-1
 flag = 1
 num = 1
 
