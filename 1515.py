@@ -7,20 +7,16 @@ for i in range(25):
         array[i][j] = num_list[j]
     num_list = []
 
+j_list = [-1, 0, 1, -1, 1, -1, 0, 1]
+i_list = [-1, -1, -1, 0, 0, 1, 1, 1]
+
 
 def life(i, j):
     zero_life = 0
 
-    for k in range(-1, 2, 1):
-        for col in range(j-1, j+2, 1):
-            if(array[i+k][col] == 1):
-                if(i+k == i and col == j):
-                    continue
-                else:
-                    zero_life += 1
-            else:
-                continue
-
+    for k in range(8):
+        if(array[i_list[k]+i][j_list[k]+j] == 1):
+            zero_life += 1
     return zero_life
 
 
@@ -39,7 +35,6 @@ for i in range(1, 24):
                 result[i][j] = 1
             else:
                 result[i][j] = 0
-
 
 for i in range(25):
     for j in range(25):
