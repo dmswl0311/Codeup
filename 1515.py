@@ -1,5 +1,5 @@
-array = [[0]*25 for _ in range(25)]
-result = [[0]*25 for _ in range(25)]
+array = [[0]*27 for _ in range(27)]
+result = [[0]*27 for _ in range(27)]
 
 for i in range(25):
     num_list = list(map(int, input().split()))
@@ -20,8 +20,8 @@ def life(i, j):
     return zero_life
 
 
-for i in range(1, 24):
-    for j in range(1, 24):
+for i in range(25):
+    for j in range(25):
         cnt = life(i, j)
         if(array[i][j] == 0):
             if(cnt == 3):
