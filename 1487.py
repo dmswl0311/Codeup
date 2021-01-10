@@ -3,29 +3,26 @@ import sys
 n, m = map(int, sys.stdin.readline().split())
 array = [[0]*m for _ in range(n)]
 
+row = -1
+col = m-1
 flag = 1
-num = 1
+num = n*m
+limit_n = n
+limit_m = m
 
-if n % 2 == 0:
-    row = (n//2)-1
-else:
-    row = n//2
-if m % 2 == 0:
-    col = (m//2)
-else:
-    col = m//2
+while(limit_n != 0 and limit_m != 0):
+    for _ in range(limit_n):
+        row += flag
+        array[row][col] = num
+        num -= 1
+    flag *= -1
+    limit_m -= 1
+    for _ in range(limit_m):
+        col += flag
+        array[row][col] = num
+        num -= 1
+    limit_n -= 1
 
-while(n != 0 and m != 0):
-    if m % 2 == 0:
-        for i in range(m):
-            col += flag
-            array[row][col] = num
-            num += 1
-        flag *= -1
-        for i in range(n):
-            row += flag
-            array[row][col] = num
-            num += 1
 for i in range(n):
     for j in range(m):
         print(array[i][j], end=' ')
