@@ -8,8 +8,9 @@ for i in range(n):
 
 for i in range(1, n):
     for j in range(i, 0, -1):
-        if(array[i] < array[i-1]):
-            array[i], array[i-1] = array[i-1], array[i]
+        if(array[j] < array[j-1]):
+            array[j], array[j-1] = array[j-1], array[j]
+
 
 for i in array:
     print(i)
