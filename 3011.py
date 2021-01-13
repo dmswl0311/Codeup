@@ -15,3 +15,4 @@ for i in range(n-1, 0, -1):
         break
 
 print(cnt-1)
+# a
