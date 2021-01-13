@@ -11,6 +11,5 @@ for i in range(1, n):
         if(array[j] < array[j-1]):
             array[j], array[j-1] = array[j-1], array[j]
 
-
 for i in array:
     print(i)
