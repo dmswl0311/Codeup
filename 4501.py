@@ -5,7 +5,6 @@ result = [0]*101
 for _ in range(7):
     result[int(stdin.readline())] += 1
 cnt = 0
-print(result)
 
 for i in range(100, -1, -1):
     if(result[i] != 0):
