@@ -26,8 +26,8 @@ def bfs(x, y):
                     array[nx][ny] = 0
                     q.append((nx, ny))
                     cnt += 1
-        if cnt >= 3:
-            result += 1
+    if cnt >= 3:
+        result += 1
 
 
 for a in range(7):
