@@ -9,19 +9,20 @@ result = 0
 
 
 def bfs(x, y):
-    cnt = 0
+    cnt = 1
     global result
     q = deque()
     q.append((x, y))
+    target = array[x][y]
+    array[x][y] = 0
 
     while(q):
         x, y = q.popleft()
-        target = array[x][y]
         for i in range(4):
             nx = x+dx[i]
             ny = y+dy[i]
             if nx >= 0 and ny >= 0 and nx < 7 and ny < 7:
-                if array[nx][ny] == 2:
+                if array[nx][ny] == target:
                     array[nx][ny] = 0
                     q.append((nx, ny))
                     cnt += 1
